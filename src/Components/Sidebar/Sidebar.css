@@ -1,0 +1,7 @@
+.sidebar {
+    height: 100vh;
+    width: 300px;
+    background-color: aquamarine;
+    margin: 5px;
+    border-radius: 10px;
+}

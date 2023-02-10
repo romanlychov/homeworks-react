@@ -1,0 +1,34 @@
+.header {
+    height: 50px;
+    background-color: rgb(194, 196, 254);
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.navigation {
+    width: 400px;
+    margin: 0 auto;
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    line-height: 50px;
+}
+
+.links__link-item {
+    list-style: none;
+}
+
+.links__link-item_style {
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+
+.links__link-item_style:hover {
+    color: lightcoral;
+}
