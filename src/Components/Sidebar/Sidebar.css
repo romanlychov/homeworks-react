@@ -4,4 +4,17 @@
     background-color: aquamarine;
     margin: 5px;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.sidebar__info {
+    width: 75%;
+    height: 30vh;
+    background-color: aqua;
+    border-radius: 15%;
+    text-align: center;
+    line-height: 30vh;
 }

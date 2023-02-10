@@ -5,9 +5,9 @@ class Sidebar extends React.Component {
     render() {
         return (
             <div className='sidebar'>
-                <article className='sidebar__'></article>
-                <article className='sidebar__'></article>
-                <article className='sidebar__'></article>
+                <article className='sidebar__info'>This could be your ad.</article>
+                <article className='sidebar__info'>This could be your ad.</article>
+                <article className='sidebar__info'>This could be your ad.</article>
             </div>
         );
     }
