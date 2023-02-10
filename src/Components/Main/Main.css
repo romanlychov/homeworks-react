@@ -1,0 +1,23 @@
+.main {
+    background-color: #c3f238;
+    width: 100%;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+.main__title {
+    text-align: center;
+    margin: 20px 0 0 0;
+    padding: 0;
+}
+
+.img {
+    display: block;
+    margin: 30px auto;
+    border-radius: 40px;
+}
+
+.description {
+    margin: 0 115px;
+    font-size: large;
+}
