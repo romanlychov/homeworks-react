@@ -1,0 +1,8 @@
+.footer {
+    background-color: lightsteelblue;
+    height: 50px;
+    margin: 5px;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 50px;
+}

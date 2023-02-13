@@ -1,5 +1,8 @@
 import React from 'react';
+import './App.css';
+import Footer from './Components/Footer/Footer';
 import Header from './Components/Header/Header';
+import Main from './Components/Main/Main';
 import Sidebar from './Components/Sidebar/Sidebar';
 
 class App extends React.Component {
@@ -7,7 +10,11 @@ class App extends React.Component {
     return (
       <div>
         <Header />
-        <Sidebar />
+        <div className='wrapper'>
+          <Sidebar />
+          <Main />
+        </div>
+        <Footer />
       </div>
     );
   }
