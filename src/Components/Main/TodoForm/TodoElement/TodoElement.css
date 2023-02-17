@@ -1,0 +1,22 @@
+.task {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px auto;
+    border: 1px solid black;
+    border-radius: 0.25em;
+    padding: 3px 7px;
+    background-color: #fff;
+}
+
+.completede-task {
+    background-color: lightgray;
+    color: gray;
+}
+
+.visible {
+    visibility: visible;
+}
+
+.unvisible {
+    visibility: hidden;
+}
