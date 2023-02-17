@@ -12,7 +12,8 @@ class TodoElement extends React.Component {
                             key={item.id}
                             onClick={() => { this.props.handleDone(item) }}
                             className={item.done ? 'task completede-task' : 'task'}
-                        >{item.text} <span className={item.done ? 'visible' : 'unvisible'}>Completed</span></article>
+                        >{item.text} <span className={item.done ? 'visible' : 'unvisible'}>Completed</span>
+                        </article>
                     );
                 })}
             </div>
