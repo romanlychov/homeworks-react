@@ -1,5 +1,6 @@
 import React from 'react';
-import './TodoElement.css';
+import style from './TodoElement.module.css';
+import cn from 'classnames';
 
 class TodoElement extends React.Component {
 
@@ -11,8 +12,8 @@ class TodoElement extends React.Component {
                         <article
                             key={item.id}
                             onClick={() => { this.props.handleDone(item) }}
-                            className={item.done ? 'task completede-task' : 'task'}
-                        >{item.text} <span className={item.done ? 'visible' : 'unvisible'}>Completed</span>
+                            className={item.done ? cn(style.task, style.completedeTask) : style.task}
+                        >{item.text} <span className={item.done ? style.visible : style.unvisible}>Completed</span>
                         </article>
                     );
                 })}

@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import style from './App.module.css';
 import Footer from './Components/Footer/Footer';
 import Header from './Components/Header/Header';
 import Main from './Components/Main/Main';
@@ -54,7 +54,7 @@ class App extends React.Component {
     return (
       <div>
         <Header />
-        <div className='wrapper'>
+        <div className={style.wrapper}>
           <Sidebar />
           <Main state={this.state}
             handleChange={this.handleChange}

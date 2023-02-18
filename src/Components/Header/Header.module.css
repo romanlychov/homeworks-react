@@ -19,16 +19,16 @@
     line-height: 50px;
 }
 
-.links__link-item {
+.links__linkItem {
     list-style: none;
 }
 
-.links__link-item_style {
+.links__linkItem_style {
     text-align: center;
     text-decoration: none;
     color: black;
 }
 
-.links__link-item_style:hover {
+.links__linkItem_style:hover {
     color: lightcoral;
 }
