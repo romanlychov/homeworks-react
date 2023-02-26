@@ -1,5 +1,4 @@
 import React from "react";
-import style from './InputElement.module.css';
 
 class InputElement extends React.Component {
     render() {

@@ -125,7 +125,6 @@ class App extends React.Component {
     } else {
       alert('All fields must be filled');
     }
-    console.log(this.state);
   }
 
   cancelButton = (e) => {
