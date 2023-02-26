@@ -1,0 +1,120 @@
+.formContainer {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999999;
+    margin: 0 auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+}
+
+.form {
+    position: relative;
+    max-width: 400px;
+    margin: 50px auto 0;
+    background: white;
+    border-radius: 30px;
+}
+
+.formLeftDecoration, .formRightDecoration {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 20px;
+    background: #f69a73;
+    border-radius: 20px;
+}
+
+.formLeftDecoration {
+    bottom: 60px;
+    left: -30px;
+}
+
+.formRightDecoration {
+    top: 60px;
+    right: -30px;
+}
+
+.formLeftDecoration:before, .formLeftDecoration:after, .formRightDecoration:before, .formRightDecorationn:after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 20px;
+    border-radius: 30px;
+    background: white;
+}
+
+.formLeftDecoration:before {
+    top: -20px;
+}
+
+.formLeftDecoration:after {
+    top: 20px;
+    left: 10px;
+}
+
+.formRightDecoration:before {
+    top: -20px;
+    right: 0;
+}
+
+.formRightDecoration:after {
+    top: 20px;
+    right: 10px;
+}
+
+.circle {
+    position: absolute;
+    bottom: 80px;
+    left: -55px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: white;
+}
+
+.formInner {
+    padding: 50px;
+}
+
+.formInner input {
+    display: block;
+    width: 80%;
+    padding: 0 20px;
+    margin-bottom: 10px;
+    background: #E9EFF6;
+    line-height: 40px;
+    border-width: 0;
+    border-radius: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.formInner button {
+    margin-top: 30px;
+    margin-right: 10px;
+    background: #f69a73;
+    border-bottom: 4px solid #d87d56;
+    color: white;
+    font-size: 14px;
+    border-radius: 20px;
+    min-width: 100px;
+}
+
+.formInner h3 {
+    margin-left: 10px;
+    margin-top: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    color: #707981;
+}
+
+.formHidden {
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
