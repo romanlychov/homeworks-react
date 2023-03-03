@@ -1,0 +1,15 @@
+.header {
+    background-image: url(img/milkyway.jpg);
+    height: 7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+
+}
+
+.button {
+    min-height: 50px;
+    width: 100px;
+    cursor: pointer;
+}

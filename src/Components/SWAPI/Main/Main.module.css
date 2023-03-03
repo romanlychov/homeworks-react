@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&family=Playfair+Display:wght@700&display=swap');
+
+.list {
+    list-style: none;
+    color: #ff6;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 75px;
+}
+
+.listItem {
+    cursor: pointer;
+}
+
+.listItem::after {
+    content: url('./star-wars.png');
+    vertical-align: middle;
+    margin-left: 15px;
+}
+
+.card {
+    box-sizing: border-box;
+    border: 3px solid #ffa500;
+    border-radius: 0 25px;
+    min-width: 250px;
+    min-height: 300px;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Playfair Display', serif;
+    color: #ff6;
+    background-color: #191551;
+    box-shadow: 10px 5px 5px #d58b00;
+    padding: 20px;
+    position: relative;
+}
+
+.cardTitle {
+    margin: 0;
+    font-size: 30px;
+    text-align: center;
+}
+
+.cardBTN {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 10px;
+    text-decoration: none;
+    width: 140px;
+    height: 45px;
+    line-height: 45px;
+    border-radius: 45px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 3px;
+    font-weight: 600;
+    color: #524f4e;
+    background: white;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
+    transition: .3s;
+}
+
+.cardBTN:hover {
+    background: red;
+    box-shadow: 0 5px 15px rgba(255, 24, 24, 0.4);
+    color: white;
+    transform: translateY(-7px);
+}
+
+.visible {
+    display: grid;
+    place-content: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.unvisible {
+    display: none;
+}
