@@ -3,8 +3,7 @@ import style from './Main.module.css';
 
 const MainPeople = (props) => {
     const [person, setPerson] = useState({});
-    const [visible, setVisible] = useState(false)
-
+    const [visible, setVisible] = useState(false);
 
     return (
         <main>
@@ -12,7 +11,12 @@ const MainPeople = (props) => {
                 {props.request.map(item => (
                     <li key={item.name}
                         onClick={() => {
-                            setPerson({ name: item.name, birth_year: item.birth_year, gender: item.gender, hair_color: item.hair_color })
+                            setPerson({
+                                name: item.name,
+                                birth_year: item.birth_year,
+                                gender: item.gender,
+                                hair_color: item.hair_color
+                            })
                             setVisible(true);
                         }}
                         className={style.listItem}
@@ -29,7 +33,6 @@ const MainPeople = (props) => {
                     <button className={style.cardBTN} onClick={() => setVisible(false)}>Close</button>
                 </article>
             </div>
-
         </main>
     );
 }
