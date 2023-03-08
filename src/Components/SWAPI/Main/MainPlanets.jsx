@@ -1,54 +1,40 @@
-import React from "react";
+import { useState } from 'react';
 import style from './Main.module.css';
 
-class MainPlanets extends React.Component {
-    state = {
-        planet: {},
-        visible: false,
-    }
+const MainPlanets = (props) => {
+    const [planet, setPlanet] = useState({});
+    const [visible, setVisible] = useState(false);
 
-    setPlanet = (name, population, rotation_period, diameter) => {
-        this.setState({
-            planet: {
-                name: name,
-                population: population,
-                rotation_period: rotation_period,
-                diameter: diameter,
-            },
-            visible: true
-        })
-    }
+    return (
+        <main>
+            <ul className={style.list}>
+                {props.request.map(item => (
+                    <li key={item.name}
+                        onClick={() => {
+                            setPlanet({
+                                name: item.name,
+                                population: item.population,
+                                rotation_period: item.rotation_period,
+                                diameter: item.diameter
+                            })
+                            setVisible(true)
+                        }}
+                        className={style.listItem}
+                    >{item.name}</li>
+                ))}
+            </ul>
 
-    onClickVis = () => {
-        this.setState({ visible: false })
-    }
-
-    render() {
-        return (
-            <main>
-                <ul className={style.list}>
-                    {this.props.state.queryResult.map(item => (
-                        <li key={item.name}
-                            onClick={() => {
-                                this.setPlanet(item.name, item.population, item.rotation_period, item.diameter)
-                            }}
-                            className={style.listItem}
-                        >{item.name}</li>
-                    ))}
-                </ul>
-
-                <div className={this.state.visible ? style.visible : style.unvisible}>
-                    <article className={style.card}>
-                        <h3>{this.state.planet.name}</h3>
-                        <p>Population: {this.state.planet.population}</p>
-                        <p>Rotation period: {this.state.planet.rotation_period}</p>
-                        <p>Diameter: {this.state.planet.diameter}</p>
-                        <button className={style.cardBTN} onClick={this.onClickVis}>Close</button>
-                    </article>
-                </div>
-            </main>
-        );
-    }
+            <div className={visible ? style.visible : style.unvisible}>
+                <article className={style.card}>
+                    <h3 className={style.cardTitle}>{planet.name}</h3>
+                    <p>Population: {planet.population}</p>
+                    <p>Rotation period: {planet.rotation_period}</p>
+                    <p>Diameter: {planet.diameter}</p>
+                    <button className={style.cardBTN} onClick={() => setVisible(false)}>Close</button>
+                </article>
+            </div>
+        </main>
+    );
 }
 
 export default MainPlanets;
