@@ -1,11 +1,19 @@
-.header {
+.headerDark {
     background-image: url(img/milkyway.jpg);
     height: 7rem;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 50px;
+}
 
+.headerLight {
+    background-image: url(img/mwl.jpg);
+    height: 7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
 }
 
 .button {

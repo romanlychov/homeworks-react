@@ -2,7 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.module.css';
 import App from './App';
+import { ThemeProvider } from './Contexts/ThemeContext';
+import { LanguageProvider } from './Contexts/LanguageContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<App />);
+root.render(
+    <ThemeProvider>
+        <LanguageProvider>
+            <App />
+        </LanguageProvider>
+    </ThemeProvider>
+);
 
