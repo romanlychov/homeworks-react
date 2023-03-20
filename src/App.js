@@ -5,6 +5,7 @@ import Header from './Components/SWAPI/Header/Header';
 import MainPlanets from './Components/SWAPI/Main/MainPlanets';
 import MainStarships from './Components/SWAPI/Main/MainStarships';
 import { useContext, useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import { ThemeContext } from './Contexts/ThemeContext';
 
 const App = () => {
@@ -25,23 +26,16 @@ const App = () => {
     setLoading(false)
   }
 
-  const showList = (wasClicked) => {
-    switch (wasClicked) {
-      case 'people':
-        return <MainPeople request={request} />;
-      case 'planets':
-        return <MainPlanets request={request} />;
-      case 'starships':
-        return <MainStarships request={request} />;
-      default:
-        return null;
-    }
-  }
-
   return (
     <div className={darkTheme ? style.dark : style.light}>
       <Header fetchData={fetchData} />
-      {showList(wasClicked)}
+
+      <Routes>
+        <Route path='people' element={<MainPeople request={request} />} />
+        <Route path='planets' element={<MainPlanets request={request} />} />
+        <Route path='starships' element={<MainStarships request={request} />} />
+      </Routes>
+      
       <div className={style.center}>
         <BeatLoader color="#ff6" loading={loading} size={75} />
       </div>
