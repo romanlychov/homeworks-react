@@ -1,5 +1,11 @@
-body {
+.dark {
   background-color: #191551;
+  height: 100vh;
+}
+
+.light {
+    background-color: #c5c1f9;
+    height: 100vh;
 }
 
 .center {

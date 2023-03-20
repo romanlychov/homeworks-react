@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&family=Playfair+Display:wght@700&display=swap');
 
-.list {
+.listDark {
     list-style: none;
     color: #ff6;
     font-family: 'Open Sans', sans-serif;
@@ -11,12 +11,33 @@
     gap: 75px;
 }
 
-.listItem {
+.listItemDark {
     cursor: pointer;
 }
 
-.listItem::after {
+.listItemDark::after {
     content: url('./star-wars.png');
+    vertical-align: middle;
+    margin-left: 15px;
+}
+
+.listLight {
+    list-style: none;
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 75px;
+}
+
+.listItemLight {
+    cursor: pointer;
+}
+
+.listItemLight::after {
+    content: url('./star-wars-l.png');
     vertical-align: middle;
     margin-left: 15px;
 }

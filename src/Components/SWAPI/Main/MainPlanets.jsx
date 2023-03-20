@@ -1,13 +1,17 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { ThemeContext } from '../../../Contexts/ThemeContext';
 import style from './Main.module.css';
 
 const MainPlanets = (props) => {
+
+    const { darkTheme } = useContext(ThemeContext);
+
     const [planet, setPlanet] = useState({});
     const [visible, setVisible] = useState(false);
 
     return (
         <main>
-            <ul className={style.list}>
+            <ul className={darkTheme ? style.listDark : style.listLight}>
                 {props.request.map(item => (
                     <li key={item.name}
                         onClick={() => {
@@ -19,7 +23,7 @@ const MainPlanets = (props) => {
                             })
                             setVisible(true)
                         }}
-                        className={style.listItem}
+                        className={darkTheme ? style.listItemDark : style.listItemLight}
                     >{item.name}</li>
                 ))}
             </ul>

@@ -4,9 +4,13 @@ import BeatLoader from 'react-spinners/BeatLoader';
 import Header from './Components/SWAPI/Header/Header';
 import MainPlanets from './Components/SWAPI/Main/MainPlanets';
 import MainStarships from './Components/SWAPI/Main/MainStarships';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { ThemeContext } from './Contexts/ThemeContext';
 
 const App = () => {
+
+  const { darkTheme } = useContext(ThemeContext);
+
   const [request, setRequest] = useState([]);
   const [wasClicked, setWasClicked] = useState('');
   const [loading, setLoading] = useState(false);
@@ -35,7 +39,7 @@ const App = () => {
   }
 
   return (
-    <div>
+    <div className={darkTheme ? style.dark : style.light}>
       <Header fetchData={fetchData} />
       {showList(wasClicked)}
       <div className={style.center}>
