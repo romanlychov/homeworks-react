@@ -1,0 +1,113 @@
+.container {
+    width: 700px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.checkboxes__item {
+    padding: 15px;
+    width: 50%;
+}
+
+.checkbox.styleCheckbox {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    padding-left: 65px;
+}
+
+.checkbox.styleCheckbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkbox.styleCheckbox input:checked~.checkbox__checkmark {
+    background-color: #49db44;
+}
+
+.checkbox.styleCheckbox input:checked~.checkbox__checkmark:after {
+    transform: rotate(90deg) translateY(-50%) translateX(-50%);
+    background-color: #49db44;
+}
+
+.checkbox.styleCheckbox .checkbox__checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 50px;
+    background-color: #ff0070;
+    transition: background-color 0.25s ease;
+    border-radius: 50%;
+}
+
+.checkbox.styleCheckbox .checkbox__checkmark:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 80%;
+    height: 12px;
+    border-radius: 6px;
+    transform: rotate(0deg) translateY(-50%) translateX(-50%);
+    transform-origin: left top;
+    background-color: #ff0070;
+    transition: transform 0.25s ease, background-color 0.25s ease;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2), -2px -2px 4px rgba(255, 255, 255, 0.6);
+}
+
+.checkbox.styleCheckbox .checkbox__body {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.shineButton {
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 30px;
+    margin: 10px 20px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #fe6637;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    color: #fe6637;
+    transition: .2s ease-in-out;
+}
+
+.shineButton:before {
+    content: "";
+    background: linear-gradient(90deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, .5));
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: -8px;
+    left: -75px;
+    transform: skewX(-45deg);
+}
+
+.shineButton:hover {
+    background: #fe6637;
+    color: #fff;
+    cursor: pointer;
+}
+
+.shineButton:hover:before {
+    left: 150px;
+    transition: .5s ease-in-out;
+}
+
+.shineButtonDis:hover {
+    cursor: not-allowed;
+}
