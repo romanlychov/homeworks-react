@@ -1,52 +1,27 @@
-import style from './App.module.css';
-import MainPeople from './Components/SWAPI/Main/MainPeople';
-import BeatLoader from 'react-spinners/BeatLoader';
-import Header from './Components/SWAPI/Header/Header';
-import MainPlanets from './Components/SWAPI/Main/MainPlanets';
-import MainStarships from './Components/SWAPI/Main/MainStarships';
-import { useContext, useState } from 'react';
-import { ThemeContext } from './Contexts/ThemeContext';
+import { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import ErrorPage from './Components/SWAPI/ErrorPage/ErrorPage';
+import HomePage from './Components/SWAPI/HomePage/HomePage';
+import LoginPage from './Components/SWAPI/LoginPage/LoginPage';
+import SWAPI from './SWAPI';
 
 const App = () => {
 
-  const { darkTheme } = useContext(ThemeContext);
+  const [isLogin, setIsLogin] = useState(false);
 
-  const [request, setRequest] = useState([]);
-  const [wasClicked, setWasClicked] = useState('');
-  const [loading, setLoading] = useState(false);
-
-  const fetchData = async (request) => {
-    setRequest([]);
-    setLoading(true);
-    const response = await fetch(`https://swapi.dev/api/${request}`)
-    const jsonData = await response.json();
-    setRequest(jsonData.results);
-    setWasClicked(request);
-    setLoading(false)
-  }
-
-  const showList = (wasClicked) => {
-    switch (wasClicked) {
-      case 'people':
-        return <MainPeople request={request} />;
-      case 'planets':
-        return <MainPlanets request={request} />;
-      case 'starships':
-        return <MainStarships request={request} />;
-      default:
-        return null;
-    }
+  const loginToggler = () => {
+    setIsLogin(!isLogin);
   }
 
   return (
-    <div className={darkTheme ? style.dark : style.light}>
-      <Header fetchData={fetchData} />
-      {showList(wasClicked)}
-      <div className={style.center}>
-        <BeatLoader color="#ff6" loading={loading} size={75} />
-      </div>
-    </div>
+    <Routes>
+      <Route index element={<HomePage />} />
+      <Route path='/login' element={<LoginPage isLogin={isLogin} loginToggler={loginToggler} />} />
+      {isLogin ? <Route path='/SWAPI/*' element={<SWAPI />} /> : null}
+      <Route path='*' element={<ErrorPage />} />
+    </Routes>
   );
+
 }
 
 export default App;
